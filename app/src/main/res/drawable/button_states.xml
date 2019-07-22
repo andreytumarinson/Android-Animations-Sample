@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/enabled"
+            android:drawable="@drawable/ic_back"
+            android:state_checked="true"/>
+
+    <item
+            android:id="@+id/disabled"
+            android:drawable="@drawable/ic_menu_vector"/>
+
+    <transition
+            android:drawable="@drawable/ic_menu_back_to_burg"
+            android:fromId="@id/enabled"
+            android:toId="@id/disabled"/>
+
+    <transition
+            android:drawable="@drawable/ic_menu_burg_to_back"
+            android:fromId="@id/disabled"
+            android:toId="@id/enabled"/>
+</animated-selector>

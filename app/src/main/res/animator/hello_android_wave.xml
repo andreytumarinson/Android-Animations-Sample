@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <objectAnimator
+            android:propertyName="rotation"
+            android:duration="300"
+            android:valueFrom="0"
+            android:valueTo="-170"
+            android:valueType="floatType"
+            android:interpolator="@android:anim/decelerate_interpolator"/>
+    <objectAnimator
+            android:propertyName="rotation"
+            android:startOffset="300"
+            android:duration="200"
+            android:valueFrom="-170"
+            android:valueTo="-160"
+            android:valueType="floatType"
+            android:interpolator="@android:interpolator/fast_out_slow_in"/>
+    <objectAnimator
+            android:propertyName="rotation"
+            android:startOffset="500"
+            android:duration="200"
+            android:valueFrom="-160"
+            android:valueTo="-170"
+            android:valueType="floatType"
+            android:interpolator="@android:interpolator/fast_out_slow_in"/>
+    <objectAnimator
+            android:propertyName="rotation"
+            android:startOffset="700"
+            android:duration="200"
+            android:valueFrom="-170"
+            android:valueTo="-160"
+            android:valueType="floatType"
+            android:interpolator="@android:interpolator/fast_out_slow_in"/>
+</set>
