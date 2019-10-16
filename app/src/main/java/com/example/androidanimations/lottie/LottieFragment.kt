@@ -1,4 +1,4 @@
-package com.example.androidanimations
+package com.example.androidanimations.lottie
 
 
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import com.example.androidanimations.R
 import kotlinx.android.synthetic.main.fragment_lottie.*
 
 
@@ -30,7 +31,11 @@ class LottieFragment : Fragment() {
         }
 
 
-        val pagerAdapter = fragmentManager?.let { PagerAdapter(it) }
+        val pagerAdapter = fragmentManager?.let {
+            PagerAdapter(
+                it
+            )
+        }
         viewPager.adapter = pagerAdapter
         viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {}

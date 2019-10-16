@@ -1,8 +1,9 @@
-package com.example.androidanimations
+package com.example.androidanimations.lottie
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.example.androidanimations.lottie.LottieFragmentPage
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

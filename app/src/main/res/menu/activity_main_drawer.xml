@@ -1,38 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:showIn="navigation_view">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
-                android:id="@+id/nav_anim_list"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="@string/anim_list"/>
+            android:id="@+id/nav_anim_list"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/anim_list" />
         <item
-                android:id="@+id/nav_gallery"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/animations"/>
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/animations" />
         <item
-                android:id="@+id/nav_slideshow"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/animator"/>
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/animator" />
         <item
-                android:id="@+id/nav_tools"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="@string/vector"/>
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/vector" />
         <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="@string/lottie"/>
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/lottie" />
         <item
-                android:id="@+id/keyframes"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="@string/keyframes"/>
+            android:id="@+id/keyframes"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/keyframes" />
 
         <item
-                android:id="@+id/physic"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="@string/physics"/>
+            android:id="@+id/physic"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/physics" />
+
+        <item
+            android:id="@+id/layoutTransitions"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/layTrans" />
+        <item
+            android:id="@+id/transitionFramework"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/transFramework" />
+        <item
+            android:id="@+id/fragmentTransition"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/fragTrans" />
     </group>
 
     <item android:title="Communicate">

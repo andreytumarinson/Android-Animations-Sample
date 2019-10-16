@@ -1,4 +1,4 @@
-package com.example.androidanimations
+package com.example.androidanimations.lottie
 
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.fragment.app.Fragment
-import com.airbnb.lottie.LottieAnimationView
-import com.airbnb.lottie.LottieDrawable
+import com.example.androidanimations.R
 import kotlinx.android.synthetic.main.fragment_lottie_page.*
 
 

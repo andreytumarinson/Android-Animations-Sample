@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+    <fade>
+        <targets>
+            <target android:targetId="@+id/textLong" />
+            <target android:targetId="@+id/imageView3" />
+            <target android:targetId="@+id/imageView4" />
+            <target android:targetId="@+id/textView8" />
+        </targets>
+    </fade>
+    <slide android:slideEdge="bottom">
+        <targets>
+            <target android:targetId="@+id/bottom" />
+        </targets>
+    </slide>
+</transitionSet>

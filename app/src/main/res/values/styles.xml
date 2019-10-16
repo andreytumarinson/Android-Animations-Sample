@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowSharedElementsUseOverlay">false</item>
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -14,4 +15,12 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    <style name="MyTransitionStyle">
+        <item name="android:fragmentFadeEnterAnimation">@animator/slide_left_in</item>
+        <item name="android:fragmentFadeExitAnimation">@animator/slide_left_out</item>
+        <item name="android:fragmentOpenEnterAnimation">@animator/slide_left_in</item>
+        <item name="android:fragmentOpenExitAnimation">@animator/slide_right_out</item>
+        <item name="android:fragmentCloseEnterAnimation">@animator/slide_right_in</item>
+        <item name="android:fragmentCloseExitAnimation">@animator/slide_left_out</item>
+    </style>
 </resources>

@@ -5,8 +5,6 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:layoutAnimation="@anim/layout_animation"
     tools:context=".LayoutChangesFragment">
     <!--  android:layoutAnimation="@anim/layout_animation"-->
 
@@ -108,7 +106,6 @@
 
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:animateLayoutChanges="true"
         android:background="#E73333"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,36 +126,5 @@
             android:text="Text in nested layout 2\negdrgdrgsgs\nrherwregrfgd"
             android:visibility="gone" />
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-
-        android:layout_marginEnd="8dp"
-        android:animateLayoutChanges="true"
-        android:background="#E73333"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll3">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#EBEAF7"
-            android:text="Text in nested layout" />
-
-        <TextView
-            android:id="@+id/nestText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#C0F3C8"
-            android:text="Text in nested layout 2\negdrgdrgsgs\nrherwregrfgd"
-            android:visibility="gone" />
-    </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

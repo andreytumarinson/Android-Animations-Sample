@@ -1,17 +1,18 @@
 package com.example.androidanimations
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.core.view.GravityCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
 import android.view.MenuItem
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import android.view.Menu
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.androidanimations.fragmenttransitition.FragTrFragment1
+import com.example.androidanimations.fragmenttransitition.FragmentTransitionFragment
+import com.example.androidanimations.lottie.LottieFragment
+import com.example.androidanimations.transitionframework.TransitionFrameworkFragment
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,7 +41,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
-            super.onBackPressed()
+            //if ((supportFragmentManager.fragments.last() as? OnBackPressedListener)?.onBackPressed() != true) {
+                super.onBackPressed()
+           // }
         }
     }
 
@@ -54,6 +57,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_share -> openScreen(LottieFragment(), R.string.lottie)
             R.id.keyframes -> openScreen(KeyframesFragment(), R.string.keyframes)
             R.id.physic -> openScreen(PhysicFragment(), R.string.physics)
+            R.id.layoutTransitions -> openScreen(LayoutChangesFragment(), R.string.layTrans)
+            R.id.transitionFramework -> openScreen(TransitionFrameworkFragment(), R.string.transFramework)
+            R.id.fragmentTransition -> openScreen(FragmentTransitionFragment(), R.string.fragTrans)
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -64,7 +70,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.title = getString(titleRes)
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, frag, "openFrag")
-            //.addToBackStack(null)
             .commit()
     }
 }

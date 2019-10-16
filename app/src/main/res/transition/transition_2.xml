@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+    <slide android:slideEdge="bottom">
+        <targets>
+        <target android:targetId="@+id/textLong2"/>
+        </targets>
+    </slide>
+    <slide android:slideEdge="end">
+        <targets>
+            <target android:targetId="@+id/textView9"/>
+            <target android:targetId="@+id/textView10"/>
+        </targets>
+    </slide>
+</transitionSet>
