@@ -49,6 +49,9 @@ class Fr1Fragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
+
+
         transitionType = arguments?.getSerializable(TYPE) as Type
 
         when (transitionType) {
@@ -119,12 +122,15 @@ class Fr1Fragment : Fragment() {
                 }
                 ?.apply {
                     if (transitionType in listOf(Type.TRAN_SHARE, Type.TRAN_SHARE_ENT_EX, Type.TRAN_SHARE_TOP)) {
+                        addSharedElement(image, image.transitionName)
+                    }
+                    if (transitionType in listOf(Type.TRAN_SHARE_ENT_EX, Type.TRAN_SHARE_TOP)) {
                         addSharedElement(card, card.transitionName)
                         addSharedElement(title, title.transitionName)
-                        addSharedElement(image, image.transitionName)
                     }
                 }
                 //?.setReorderingAllowed(false)
+                //?.setReorderingAllowed(true)
                 ?.addToBackStack("ddd")
                 ?.replace(R.id.container, Fr2Fragment.getInstance(transitionType))
                 ?.commit()

@@ -45,7 +45,7 @@ class Fr2Fragment : Fragment() {
                 returnTransition = Slide(Gravity.TOP)
             }
             Type.TRAN_SHARE_ENT_EX -> {
-                exitTransition = Fade()
+                //exitTransition = Fade()
             }
             Type.TRAN_SHARE_TOP -> {
                 val tr = TransitionInflater.from(context).inflateTransition(R.transition.transition_2)
@@ -108,8 +108,8 @@ class Fr2Fragment : Fragment() {
                 val shTr = TransitionSet()
                     .addTransition(TransitionInflater.from(activity).inflateTransition(android.R.transition.move))
                     .addTransition(TextSizeTransition())
-                sharedElementEnterTransition = shTr.clone().apply { startDelay = 150 }
-                sharedElementReturnTransition = shTr.clone().apply { startDelay = 200 }
+                sharedElementEnterTransition = shTr.clone().apply { startDelay = 50 }
+                sharedElementReturnTransition = shTr.clone().apply { startDelay = 100 }
             }
             else -> {
                 sharedElementEnterTransition = null

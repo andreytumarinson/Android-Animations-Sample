@@ -13,5 +13,7 @@ val sampleGridData = listOf(
     Item("Tndkrndb d", R.drawable.img_lights),
     Item("Pgrtb drgb", R.drawable.img_lights),
     Item("giluk d", R.drawable.img_lights),
-    Item("xfyxjdftjx drgb", R.drawable.img_lights)
+    Item("xfyxjdftjx drgb", R.drawable.img_lights),
+    Item("ythae d", R.drawable.image2),
+    Item("yjyyumkukuk drgb", R.drawable.image2)
 )

@@ -39,11 +39,11 @@ class FragTrDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
-        enterTransition = TransitionSet()
+        //sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+        /*enterTransition = TransitionSet()
             .addTransition(Fade()
                 .excludeChildren(R.id.back, true)
-                .apply { duration = 500 })
+                .apply { duration = 500 })*/
             /*.addTransition(Slide(Gravity.BOTTOM)
                 .addTarget(R.id.title)
                 .addTarget(R.id.details))*/

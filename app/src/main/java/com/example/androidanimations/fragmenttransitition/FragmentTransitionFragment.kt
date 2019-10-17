@@ -35,6 +35,7 @@ class FragmentTransitionFragment : Fragment() {
         button4.setOnClickListener { openScreen(Fr1Fragment.getInstance(Type.TRAN_SHARE)) }
         button5.setOnClickListener { openScreen(Fr1Fragment.getInstance(Type.TRAN_SHARE_ENT_EX)) }
         button6.setOnClickListener { openScreen(Fr1Fragment.getInstance(Type.TRAN_SHARE_TOP)) }
+        button7.setOnClickListener { openScreen(FragTrGridFragment()) }
 
 
 

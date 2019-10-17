@@ -50,7 +50,7 @@ class GridAdapter(private val items: List<Item>, private val itemClickListener: 
 
         fun bind(item: Item) {
             this.item = item
-            itemView.image.transitionName = "${item.name}_${adapterPosition}"
+            itemView.image.transitionName = "f_${adapterPosition}"
             itemView.image.setImageResource(item.image)
             itemView.text.text = item.name
         }
