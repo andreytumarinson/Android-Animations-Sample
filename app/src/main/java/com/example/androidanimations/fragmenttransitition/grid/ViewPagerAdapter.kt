@@ -1,4 +1,4 @@
-package com.example.androidanimations.fragmenttransitition
+package com.example.androidanimations.fragmenttransitition.grid
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -11,7 +11,7 @@ class ViewPagerAdapter internal constructor(fm: FragmentManager, private val ite
 
     override fun getItem(position: Int): Fragment {
         val item = items[position]
-        return FragTrDetailsFragment.newInstance(item, "f_${position}")
+        return FragTrDetailsFragment.newInstance(item, "image_$position")
     }
 
     override fun getCount(): Int {

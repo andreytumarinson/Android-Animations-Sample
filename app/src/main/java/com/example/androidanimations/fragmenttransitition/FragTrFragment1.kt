@@ -2,18 +2,14 @@ package com.example.androidanimations.fragmenttransitition
 
 
 import android.os.Bundle
-import androidx.transition.Explode
 import androidx.transition.Fade
-import androidx.transition.TransitionInflater
-import androidx.transition.TransitionSet
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.transition.Slide
 
 import com.example.androidanimations.R
+import com.example.androidanimations.fragmenttransitition.grid.FragTrGridFragment
 import kotlinx.android.synthetic.main.fragment_frag_tr_fragment1.*
 
 /**

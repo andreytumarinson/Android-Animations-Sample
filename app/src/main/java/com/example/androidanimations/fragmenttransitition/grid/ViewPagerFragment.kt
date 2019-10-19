@@ -1,4 +1,4 @@
-package com.example.androidanimations.fragmenttransitition
+package com.example.androidanimations.fragmenttransitition.grid
 
 
 import android.os.Bundle
@@ -14,7 +14,6 @@ import com.example.androidanimations.utils.Item
 import kotlinx.android.synthetic.main.fragment_view_pager.*
 import com.example.androidanimations.MainActivity
 import androidx.core.app.SharedElementCallback
-import kotlinx.android.synthetic.main.grid_item.view.*
 import androidx.viewpager.widget.ViewPager
 
 
@@ -39,17 +38,8 @@ class ViewPagerFragment : Fragment() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //postponeEnterTransition()
 
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_view_pager, container, false)
     }
 
@@ -59,17 +49,31 @@ class ViewPagerFragment : Fragment() {
         val currentItem = arguments!!.getInt(EXTRA_INITIAL_ITEM_POS)
         val animalItems = arguments!!.getSerializable(EXTRA_ANIMAL_ITEMS) as List<Item>
 
-        val animalPagerAdapter = ViewPagerAdapter(childFragmentManager, animalItems)
+        val animalPagerAdapter =
+            ViewPagerAdapter(
+                childFragmentManager,
+                animalItems
+            )
 
         viewPager.adapter = animalPagerAdapter
         viewPager.currentItem = currentItem
 
         viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
             override fun onPageSelected(position: Int) {
-                MainActivity.currentPosition = position
+                PositionHolder.currentItemPosition = position
             }
         })
 
+        prepareSharedTransition()
+
+        // Avoid a postponeEnterTransition on orientation change, and postpone only of first creation.
+        if (savedInstanceState == null) {
+            postponeEnterTransition();
+        }
+
+    }
+
+    private fun prepareSharedTransition() {
         sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
         //sharedElementReturnTransition = null
 
@@ -83,15 +87,14 @@ class ViewPagerFragment : Fragment() {
                     // At this stage, the method will simply return the fragment at the
                     // position and will not create a new one.
                     val currentFragment = viewPager.adapter
-                        ?.instantiateItem(viewPager, MainActivity.currentPosition) as Fragment
+                        ?.instantiateItem(viewPager, PositionHolder.currentItemPosition) as Fragment
                     val view1 = currentFragment.view ?: return
 
-                    Log.e("dd", "setEnterSharedElementCallback ${MainActivity.currentPosition} ${view1.findViewById<View>(R.id.imageView)}")
+                    Log.e("dd", "setEnterSharedElementCallback ${PositionHolder.currentItemPosition} ${view1.findViewById<View>(R.id.imageView)}")
                     // Map the first shared element name to the child ImageView.
-                    sharedElements[/*"f_"+MainActivity.currentPosition*/names[0]] = view1.findViewById<View>(R.id.imageView)
+                    sharedElements[names[0]] = view1.findViewById<View>(R.id.imageView)
                 }
             })
-
     }
 
 

@@ -1,12 +1,7 @@
-package com.example.androidanimations.fragmenttransitition
+package com.example.androidanimations.fragmenttransitition.grid
 
 
 import android.os.Bundle
-import androidx.transition.Fade
-import androidx.transition.Slide
-import androidx.transition.TransitionInflater
-import androidx.transition.TransitionSet
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,25 +31,7 @@ class FragTrDetailsFragment : Fragment() {
     }
 
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
-        /*enterTransition = TransitionSet()
-            .addTransition(Fade()
-                .excludeChildren(R.id.back, true)
-                .apply { duration = 500 })*/
-            /*.addTransition(Slide(Gravity.BOTTOM)
-                .addTarget(R.id.title)
-                .addTarget(R.id.details))*/
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_frag_tr_details, container, false)
     }
 
@@ -81,6 +58,6 @@ class FragTrDetailsFragment : Fragment() {
                 }
             })*/
 
-
+        parentFragment?.startPostponedEnterTransition()
     }
 }

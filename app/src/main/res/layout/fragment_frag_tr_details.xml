@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#EFF1C0"
     android:id="@+id/back"
-    tools:context=".fragmenttransitition.FragTrDetailsFragment">
+    tools:context=".fragmenttransitition.grid.FragTrDetailsFragment">
 
     <ImageView
         android:id="@+id/imageView"

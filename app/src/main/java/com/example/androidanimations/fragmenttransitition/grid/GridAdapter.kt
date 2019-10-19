@@ -1,7 +1,6 @@
-package com.example.androidanimations.fragmenttransitition
+package com.example.androidanimations.fragmenttransitition.grid
 
 import androidx.recyclerview.widget.RecyclerView
-import androidx.core.view.ViewCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,18 +9,19 @@ import com.example.androidanimations.R
 import com.example.androidanimations.utils.Item
 import kotlinx.android.synthetic.main.grid_item.view.*
 
+interface ViewHolderListener {
+    fun onLoadCompleted(view: ImageView, position: Int)
 
-interface OnItemClickListener {
-    fun onItemClicked(position: Int, item: Item, imageView: ImageView)
+    fun onItemClicked(view: View, position: Int)
 }
 
-class GridAdapter(private val items: List<Item>, private val itemClickListener: OnItemClickListener)
+class GridAdapter(private val items: List<Item>, private val viewHolderListener: ViewHolderListener)
     : RecyclerView.Adapter<GridAdapter.ImageViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         return ImageViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.grid_item, parent, false), itemClickListener)
+                .inflate(R.layout.grid_item, parent, false), viewHolderListener)
     }
 
     override fun getItemCount(): Int {
@@ -36,23 +36,26 @@ class GridAdapter(private val items: List<Item>, private val itemClickListener: 
         holder.bind(items[position])
     }
 
-    inner class ImageViewHolder(itemView: View, itemClickListener: OnItemClickListener?) : RecyclerView.ViewHolder(itemView) {
+    inner class ImageViewHolder(itemView: View, viewHolderListener: ViewHolderListener) : RecyclerView.ViewHolder(itemView) {
 
         private var item: Item? = null
 
         init {
             itemView.setOnClickListener {
                 item?.let {
-                    itemClickListener?.onItemClicked(adapterPosition, it, itemView.image)
+                    //itemClickListener?.onItemClicked(adapterPosition, it, itemView.image)
+                    viewHolderListener.onItemClicked(itemView, adapterPosition)
                 }
             }
         }
 
         fun bind(item: Item) {
             this.item = item
-            itemView.image.transitionName = "f_${adapterPosition}"
+            itemView.image.transitionName = "image_$adapterPosition"
             itemView.image.setImageResource(item.image)
             itemView.text.text = item.name
+
+            viewHolderListener.onLoadCompleted(itemView.image, adapterPosition)
         }
     }
 }

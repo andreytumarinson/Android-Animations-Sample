@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.androidanimations.R
+import com.example.androidanimations.fragmenttransitition.grid.FragTrGridFragment
 import com.example.androidanimations.utils.Item
 import kotlinx.android.synthetic.main.fragment_fragment_transition.*
 
