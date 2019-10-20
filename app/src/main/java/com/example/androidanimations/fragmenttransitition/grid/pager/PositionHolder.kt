@@ -1,4 +1,4 @@
-package com.example.androidanimations.fragmenttransitition.grid
+package com.example.androidanimations.fragmenttransitition.grid.pager
 
 class PositionHolder {
     companion object {

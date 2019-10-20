@@ -1,8 +1,7 @@
-package com.example.androidanimations.fragmenttransitition.grid
+package com.example.androidanimations.fragmenttransitition.grid.pager
 
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,32 +11,28 @@ import com.example.androidanimations.R
 import androidx.transition.TransitionInflater
 import com.example.androidanimations.utils.Item
 import kotlinx.android.synthetic.main.fragment_view_pager.*
-import com.example.androidanimations.MainActivity
 import androidx.core.app.SharedElementCallback
 import androidx.viewpager.widget.ViewPager
 
 
-
-
-/**
- * A simple [Fragment] subclass.
- */
 class ViewPagerFragment : Fragment() {
 
     companion object {
         private const val EXTRA_INITIAL_ITEM_POS = "initial_item_pos"
-        private const val EXTRA_ANIMAL_ITEMS = "animal_items"
+        private const val EXTRA_ITEMS = "items"
+        private const val IS_LOCAL = "is_local"
 
-        fun newInstance(currentItem: Int, items: List<Item>): ViewPagerFragment {
-            return ViewPagerFragment().apply {
+        fun newInstance(currentItem: Int, items: List<Item>, isLocal: Boolean): ViewPagerFragment {
+            return ViewPagerFragment()
+                .apply {
                 arguments = Bundle().apply {
                     putInt(EXTRA_INITIAL_ITEM_POS, currentItem)
-                    putSerializable(EXTRA_ANIMAL_ITEMS, ArrayList(items))
+                    putSerializable(EXTRA_ITEMS, ArrayList(items))
+                    putBoolean(IS_LOCAL, isLocal)
                 }
             }
         }
     }
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_view_pager, container, false)
@@ -47,15 +42,12 @@ class ViewPagerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val currentItem = arguments!!.getInt(EXTRA_INITIAL_ITEM_POS)
-        val animalItems = arguments!!.getSerializable(EXTRA_ANIMAL_ITEMS) as List<Item>
+        val items = arguments!!.getSerializable(EXTRA_ITEMS) as List<Item>
+        val isLocal = arguments?.getBoolean(IS_LOCAL) ?: true
 
-        val animalPagerAdapter =
-            ViewPagerAdapter(
-                childFragmentManager,
-                animalItems
-            )
+        val pagerAdapter = ViewPagerAdapter(childFragmentManager, items, isLocal)
 
-        viewPager.adapter = animalPagerAdapter
+        viewPager.adapter = pagerAdapter
         viewPager.currentItem = currentItem
 
         viewPager.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
@@ -70,29 +62,25 @@ class ViewPagerFragment : Fragment() {
         if (savedInstanceState == null) {
             postponeEnterTransition();
         }
-
     }
 
     private fun prepareSharedTransition() {
-        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
-        //sharedElementReturnTransition = null
+        sharedElementEnterTransition = TransitionInflater.from(context)
+            .inflateTransition(R.transition.image_shared_element_transition)
 
         setEnterSharedElementCallback(
             object : SharedElementCallback() {
-                override fun onMapSharedElements(names: List<String>,
-                                                 sharedElements: MutableMap<String, View>) {
+                override fun onMapSharedElements(names: List<String>, sharedElements: MutableMap<String, View>) {
                     // Locate the image view at the primary fragment (the ImageFragment
                     // that is currently visible). To locate the fragment, call
                     // instantiateItem with the selection position.
                     // At this stage, the method will simply return the fragment at the
                     // position and will not create a new one.
-                    val currentFragment = viewPager.adapter
-                        ?.instantiateItem(viewPager, PositionHolder.currentItemPosition) as Fragment
-                    val view1 = currentFragment.view ?: return
+                    val currentFragment = viewPager.adapter?.instantiateItem(viewPager, PositionHolder.currentItemPosition) as Fragment
+                    val view = currentFragment.view ?: return
 
-                    Log.e("dd", "setEnterSharedElementCallback ${PositionHolder.currentItemPosition} ${view1.findViewById<View>(R.id.imageView)}")
                     // Map the first shared element name to the child ImageView.
-                    sharedElements[names[0]] = view1.findViewById<View>(R.id.imageView)
+                    sharedElements[names[0]] = view.findViewById(R.id.imageView)
                 }
             })
     }

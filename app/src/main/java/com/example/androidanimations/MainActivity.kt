@@ -8,7 +8,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import com.example.androidanimations.fragmenttransitition.FragTrFragment1
 import com.example.androidanimations.fragmenttransitition.FragmentTransitionFragment
 import com.example.androidanimations.lottie.LottieFragment
 import com.example.androidanimations.transitionframework.TransitionFrameworkFragment
