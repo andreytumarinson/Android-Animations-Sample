@@ -18,7 +18,7 @@
         tools:src="@tools:sample/avatars[2]" />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/titleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -38,5 +38,5 @@
         android:text="First, enable window content transitions with the android:windowActivityTransitions attribute when you define a style that inherits from the material theme. You can also specify enter, exit, and shared element transitions in your style definition:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/titleTV" />
 </androidx.constraintlayout.widget.ConstraintLayout>

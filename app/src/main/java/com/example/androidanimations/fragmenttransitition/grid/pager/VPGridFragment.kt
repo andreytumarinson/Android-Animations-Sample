@@ -1,6 +1,7 @@
 package com.example.androidanimations.fragmenttransitition.grid.pager
 
 import android.os.Bundle
+import android.util.Log
 import androidx.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
@@ -94,8 +95,7 @@ class VPGridFragment : Fragment(), ViewHolderListener {
                 // Scroll to position if the view for the current position is null (not currently part of
                 // layout manager children), or it's not completely visible.
                 if (viewAtPosition == null || layoutManager.isViewPartiallyVisible(viewAtPosition, false, true)) {
-                    recyclerView.post { layoutManager?.scrollToPosition(PositionHolder.currentItemPosition) }
-                }
+                    recyclerView.post { layoutManager?.scrollToPosition(PositionHolder.currentItemPosition) }}
             }
         })
     }

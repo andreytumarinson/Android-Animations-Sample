@@ -129,7 +129,7 @@ class Fr1Fragment : Fragment() {
                     addSharedElement(card, card.transitionName)
                 }
                 if (transitionType in listOf(Type.TRAN_SHARE_CUSTOM, Type.TRAN_SHARE_REMOTE)) {
-                    addSharedElement(title, title.transitionName)
+                    addSharedElement(titleTV, titleTV.transitionName)
                 }
             }
             ?.addToBackStack(null)

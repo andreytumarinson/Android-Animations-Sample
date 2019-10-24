@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.example.androidanimations.activitytransition.ActivityTransitionFragment
 import com.example.androidanimations.fragmenttransitition.FragmentTransitionFragment
 import com.example.androidanimations.lottie.LottieFragment
 import com.example.androidanimations.transitionframework.TransitionFrameworkFragment
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.layoutTransitions -> openScreen(LayoutChangesFragment(), R.string.layTrans)
             R.id.transitionFramework -> openScreen(TransitionFrameworkFragment(), R.string.transFramework)
             R.id.fragmentTransition -> openScreen(FragmentTransitionFragment(), R.string.fragTrans)
+            R.id.activityTransition -> openScreen(ActivityTransitionFragment(), R.string.actTrans)
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)

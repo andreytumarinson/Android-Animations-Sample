@@ -1,4 +1,4 @@
-package com.example.androidanimations.fragmenttransitition.grid.pager
+package com.example.androidanimations.activitytransition.grid.pager
 
 
 import android.graphics.drawable.Drawable
@@ -55,7 +55,7 @@ class VPDetailsFragment : Fragment() {
 
         if(isLocal) {
             imageView.setImageResource(item.image as Int)
-            parentFragment?.startPostponedEnterTransition()
+            activity?.startPostponedEnterTransition()
         } else {
             Glide.with(this)
                 .load(item.image)
@@ -64,12 +64,12 @@ class VPDetailsFragment : Fragment() {
                 .listener(object : RequestListener<Drawable> {
 
                     override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean): Boolean {
-                        parentFragment?.startPostponedEnterTransition()
+                        activity?.startPostponedEnterTransition()
                         return false
                     }
 
                     override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
-                        parentFragment?.startPostponedEnterTransition()
+                        activity?.startPostponedEnterTransition()
                         return false
                     }
                 })

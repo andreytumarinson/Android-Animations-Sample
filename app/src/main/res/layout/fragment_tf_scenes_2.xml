@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="JUNE 3, 2018"
-        app:layout_constraintRight_toRightOf="@+id/title"
-        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintRight_toRightOf="@+id/titleTV"
+        app:layout_constraintTop_toBottomOf="@+id/titleTV"
         android:textSize="12sp"
         android:background="#d3d3d3"
         android:paddingStart="16dp"
@@ -33,7 +33,7 @@
         android:paddingBottom="3dp"/>
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/titleTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"

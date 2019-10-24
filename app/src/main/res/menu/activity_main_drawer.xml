@@ -46,6 +46,10 @@
             android:id="@+id/fragmentTransition"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/fragTrans" />
+        <item
+            android:id="@+id/activityTransition"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/actTrans" />
     </group>
 
     <item android:title="Communicate">

@@ -9,7 +9,6 @@
         android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
         tools:context=".fragmenttransitition.grid.pager.DetailsFragment">
 
         <ImageView
@@ -23,7 +22,7 @@
             tools:src="@tools:sample/avatars[2]" />
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/titleTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -44,6 +43,6 @@
 You might have heard about a cool animation called “Circular Reveal”. In this article, I will be showing how we can implement this animation during opening and closing of a fragment — in a clean way."
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/titleTV" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

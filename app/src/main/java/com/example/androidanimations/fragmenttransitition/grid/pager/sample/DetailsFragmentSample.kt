@@ -41,7 +41,7 @@ class DetailsFragmentSample : Fragment() {
         val item = arguments?.getSerializable(EXTRA_ITEM) as Item
         val transitionName = arguments?.getString(EXTRA_TRANSITION_NAME)
 
-        title.text = item.name
+        titleTV.text = item.name
         imageView.transitionName = transitionName
         imageView.setImageResource(item.image as Int)
 

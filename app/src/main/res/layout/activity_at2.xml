@@ -2,24 +2,40 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ebebeb">
+    android:layout_height="match_parent">
+
+    <!-- <View
+         android:id="@+id/card"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="#66BB6A"
+         android:transitionName="card"/>-->
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:transitionGroup="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/card"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#66BB6A"
-            android:transitionName="card">
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/card"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#66BB6A"
+                android:transitionName="card"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="265dp"
+                android:elevation="2dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image2"
                 android:transitionName="image"
@@ -31,12 +47,12 @@
                 android:id="@+id/titleTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="2dp"
                 android:fontFamily="sans-serif-light"
-                android:lineSpacingMultiplier="1.2"
                 android:padding="12dp"
                 android:text="Get Your Business"
                 android:textColor="@android:color/white"
-                android:textSize="36sp"
+                android:textSize="@dimen/text_size_end"
                 android:transitionName="title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/image" />
@@ -48,8 +64,11 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:background="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:drawableStart="@drawable/ic_share_24px"
                 android:drawablePadding="8dp"
+                android:elevation="2dp"
+                android:focusable="true"
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="SHARE"
@@ -63,9 +82,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:drawableStart="@drawable/ic_file_copy_24px"
                 android:drawablePadding="8dp"
+                android:elevation="2dp"
+                android:focusable="true"
                 android:gravity="center"
                 android:padding="8dp"
                 android:text="COPY"
@@ -78,6 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:elevation="2dp"
                 android:padding="16dp"
                 android:text="Enable reordering allowed when postponing transitions\n\n
 When the content of the transition needs to be loaded before the transition can start, we need to use postponeEnterTransition(). Postponing the transition will only work when you add setReoderingAllowed(true) to your fragment transition (see Android docs and the Reordering part of this blog post by Chris Banes for more context.)"
@@ -93,6 +116,7 @@ When the content of the transition needs to be loaded before the transition can 
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="24dp"
                 android:clickable="true"
+                android:focusable="true"
                 android:src="@drawable/ic_menu_camera"
                 android:tint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/titleTV"

@@ -6,7 +6,29 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowSharedElementsUseOverlay">false</item>
+
+        <!-- enable window content transitions -->
+        <!--<item name="android:windowActivityTransitions">true</item>-->
+
+        <!--<item name="android:windowContentTransitions">true</item>-->
+
+        <!-- specify enter and exit transitions -->
+        <!--<item name="android:windowEnterTransition">@android:transition/explode</item>
+        <item name="android:windowReturnTransition">@android:transition/slide_right</item>
+        <item name="android:windowExitTransition">@android:transition/explode</item>
+        <item name="android:windowReenterTransition">@android:transition/slide_right</item>-->
+
+        <!-- specify shared element transitions -->
+        <!--<item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>-->
+
+        <!--<item name="android:windowEnterAnimation">@anim/scale_up</item>
+        <item name="android:windowExitAnimation">@anim/scale_up</item>-->
+
+        <!--<item name="android:windowAnimationStyle">@null</item>-->
+        <!--<item name="android:windowAnimationStyle">@style/ActivityTransitions</item>-->
+
+        <!--<item name="android:windowSharedElementsUseOverlay">false</item>-->
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -22,5 +44,11 @@
         <item name="android:fragmentOpenExitAnimation">@animator/flip_right_out</item>
         <item name="android:fragmentCloseEnterAnimation">@animator/flip_right_in</item>
         <item name="android:fragmentCloseExitAnimation">@animator/flip_left_out</item>
+    </style>
+    <style name="ActivityTransitions" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/scale_up</item>
+        <item name="android:activityOpenExitAnimation">@anim/scale_down</item>
+        <item name="android:activityCloseEnterAnimation">@anim/scale_up</item>
+        <item name="android:activityCloseExitAnimation">@anim/scale_down</item>
     </style>
 </resources>
