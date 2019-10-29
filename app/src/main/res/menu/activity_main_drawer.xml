@@ -50,6 +50,10 @@
             android:id="@+id/activityTransition"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/actTrans" />
+        <item
+            android:id="@+id/circle"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/circle" />
     </group>
 
     <item android:title="Communicate">

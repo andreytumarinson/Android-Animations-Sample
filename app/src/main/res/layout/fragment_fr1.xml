@@ -9,9 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/page"
@@ -40,7 +38,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="?attr/selectableItemBackground"
+                android:foreground="?attr/selectableItemBackground"
                 android:backgroundTint="#66BB6A"
                 android:elevation="6dp"
                 android:transitionName="card"
@@ -75,6 +73,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
                         android:src="@drawable/ic_share_24px"
                         android:tint="@android:color/white"
                         app:layout_constraintBottom_toBottomOf="@+id/titleTV"
@@ -87,6 +87,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:padding="8dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
                         android:src="@drawable/ic_file_copy_24px"
                         android:tint="@android:color/white"
                         app:layout_constraintBottom_toBottomOf="@+id/titleTV"

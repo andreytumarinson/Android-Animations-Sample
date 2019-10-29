@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="tabColor1">#4CAF50</color>
+    <color name="tabColor2">#2196F3</color>
+    <color name="tabColor3">#673AB7</color>
+    <color name="newAccent">#FFB74D</color>
+
+    <color name="joyStick">#D6D6D6</color>
+    <color name="joyStick2">#7986CB</color>
 </resources>

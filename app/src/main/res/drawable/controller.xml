@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#fff">
+    <item android:id="@android:id/mask">
+        <shape
+            android:innerRadiusRatio="5"
+            android:shape="ring"
+            android:thickness="60dp"
+            android:useLevel="false">
+
+            <solid android:color="#F80000" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/background">
+        <shape
+            android:innerRadiusRatio="5"
+            android:shape="ring"
+            android:thickness="60dp"
+            android:useLevel="false">
+
+            <solid android:color="@color/joyStick2" />
+        </shape>
+    </item>
+</ripple>

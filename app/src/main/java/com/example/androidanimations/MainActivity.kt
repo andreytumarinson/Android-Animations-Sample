@@ -1,5 +1,6 @@
 package com.example.androidanimations
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -9,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.androidanimations.activitytransition.ActivityTransitionFragment
+import com.example.androidanimations.circle.CircleActivity
 import com.example.androidanimations.fragmenttransitition.FragmentTransitionFragment
 import com.example.androidanimations.lottie.LottieFragment
 import com.example.androidanimations.transitionframework.TransitionFrameworkFragment
@@ -16,14 +18,10 @@ import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-/*companion object {
-    var currentPosition = 0
-}*/
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        val toolbar: Toolbar = findViewById(R.id.toolbarView)
         setSupportActionBar(toolbar)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
@@ -64,6 +62,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.transitionFramework -> openScreen(TransitionFrameworkFragment(), R.string.transFramework)
             R.id.fragmentTransition -> openScreen(FragmentTransitionFragment(), R.string.fragTrans)
             R.id.activityTransition -> openScreen(ActivityTransitionFragment(), R.string.actTrans)
+            R.id.circle -> //openScreen(CircleFragment(), R.string.circle)
+            {
+                startActivity(Intent(this, CircleActivity::class.java))
+            }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)
