@@ -72,7 +72,7 @@ class GridAdapter(private val items: List<Item>, private val viewHolderListener:
                 .into(itemView.image)
 
             //todo Local load sample
-            //itemView.image.setImageResource(item.image as Int)
+            //itemView.image.setImageResource(tutorial_item.image as Int)
             //viewHolderListener.onLoadCompleted(adapterPosition)
         }
     }

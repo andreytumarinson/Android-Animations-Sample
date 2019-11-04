@@ -49,7 +49,7 @@ class GridAdapter(private val items: List<Item>, private val viewHolderListener:
 
             //todo Glide sample
             /*Glide.with(itemView)
-                .load(item.image)
+                .load(tutorial_item.image)
                 .dontTransform()
                 .listener(object : RequestListener<Drawable> {
 

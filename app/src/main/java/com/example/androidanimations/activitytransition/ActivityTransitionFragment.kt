@@ -38,7 +38,7 @@ class ActivityTransitionFragment : Fragment() {
     }
 
     private fun <T : Any> openScreen(cls: KClass<T>, type: Type? = null, isLocal: Boolean? = null) {
-        startActivity(Intent(context, cls.java/*ATActivity1::class.java*/).apply {
+        startActivity(Intent(context, cls.java).apply {
             type?.let { putExtra(ATActivity1.TYPE, it) }
             isLocal?.let { putExtra(VPGridActivity.IS_LOCAL, it) }
         })

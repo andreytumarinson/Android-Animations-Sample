@@ -10,10 +10,13 @@ import android.os.Bundle
 import android.transition.*
 import android.view.View
 import android.view.ViewAnimationUtils
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
+import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import com.example.androidanimations.R
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_circle.*
@@ -81,6 +84,7 @@ class CircleActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
             .addTransition(
                 ChangeTransform().apply {
                     pathMotion = ArcMotion()
+                    interpolator = LinearOutSlowInInterpolator()
                     duration = 300
                     addListener(object : Transition.TransitionListener {
                         override fun onTransitionResume(transition: Transition?) {}

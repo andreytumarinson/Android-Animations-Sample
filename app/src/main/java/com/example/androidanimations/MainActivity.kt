@@ -13,6 +13,7 @@ import com.example.androidanimations.activitytransition.ActivityTransitionFragme
 import com.example.androidanimations.circle.CircleActivity
 import com.example.androidanimations.fragmenttransitition.FragmentTransitionFragment
 import com.example.androidanimations.lottie.LottieFragment
+import com.example.androidanimations.motion.MotionLayoutFragment
 import com.example.androidanimations.transitionframework.TransitionFrameworkFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
+        // Handle navigation view tutorial_item clicks here.
         when (item.itemId) {
             R.id.nav_anim_list -> openScreen(AnimationListFragment(), R.string.anim_list)
             R.id.nav_gallery -> openScreen(AnimationsFragment(), R.string.animations)
@@ -62,10 +63,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.transitionFramework -> openScreen(TransitionFrameworkFragment(), R.string.transFramework)
             R.id.fragmentTransition -> openScreen(FragmentTransitionFragment(), R.string.fragTrans)
             R.id.activityTransition -> openScreen(ActivityTransitionFragment(), R.string.actTrans)
-            R.id.circle -> //openScreen(CircleFragment(), R.string.circle)
-            {
-                startActivity(Intent(this, CircleActivity::class.java))
-            }
+            R.id.circle -> { startActivity(Intent(this, CircleActivity::class.java)) }
+            R.id.motion -> openScreen(MotionLayoutFragment(), R.string.motion)
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         drawerLayout.closeDrawer(GravityCompat.START)

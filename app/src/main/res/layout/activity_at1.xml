@@ -8,8 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:transitionGroup="false">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/page"
@@ -50,7 +49,6 @@
                 android:layout_marginEnd="16dp"
                 android:background="?attr/selectableItemBackground"
                 android:backgroundTint="#66BB6A"
-                android:transitionGroup="true"
                 android:transitionName="card"
                 app:cardCornerRadius="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:transitionGroup="true">
+                    >
 
                     <ImageView
                         android:id="@+id/image"

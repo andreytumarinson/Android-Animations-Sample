@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".motion.MotionLayoutFragment">
+
+    <Button
+        android:id="@+id/buttonSimple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="simple"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTutorial"
+        app:layout_constraintEnd_toEndOf="@+id/buttonTutorial"
+        app:layout_constraintStart_toStartOf="@+id/buttonTutorial"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/buttonTutorial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="tutorial"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCollapse"
+        app:layout_constraintEnd_toEndOf="@+id/buttonCollapse"
+        app:layout_constraintStart_toStartOf="@+id/buttonCollapse"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSimple" />
+
+    <Button
+        android:id="@+id/buttonCollapse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="collapse toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/buttonVan"
+        app:layout_constraintEnd_toEndOf="@+id/buttonVan"
+        app:layout_constraintStart_toStartOf="@+id/buttonVan"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTutorial" />
+
+    <Button
+        android:id="@+id/buttonVan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Van Gogh"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMi"
+        app:layout_constraintEnd_toEndOf="@+id/buttonMi"
+        app:layout_constraintStart_toStartOf="@+id/buttonMi"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCollapse" />
+
+    <Button
+        android:id="@+id/buttonMi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Mi Home"
+        app:layout_constraintBottom_toTopOf="@+id/buttonYoutube"
+        app:layout_constraintEnd_toEndOf="@+id/buttonYoutube"
+        app:layout_constraintStart_toStartOf="@+id/buttonYoutube"
+        app:layout_constraintTop_toBottomOf="@+id/buttonVan" />
+
+    <Button
+        android:id="@+id/buttonYoutube"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Youtube"
+        app:layout_constraintBottom_toTopOf="@+id/buttonFragment"
+        app:layout_constraintEnd_toEndOf="@+id/buttonFragment"
+        app:layout_constraintStart_toStartOf="@+id/buttonFragment"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMi" />
+
+    <Button
+        android:id="@+id/buttonFragment"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Fragment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonYoutube" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

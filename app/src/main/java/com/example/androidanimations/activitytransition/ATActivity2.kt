@@ -52,15 +52,18 @@ class ATActivity2 : AppCompatActivity() {
                         .addTransition(Fade().addTarget(R.id.action_bar_container))
                         .addTransition(Slide(Gravity.BOTTOM)
                             .addTarget(textLong2)
-                            .apply { startDelay = 300 }
+                            //.apply { startDelay = 300 }
                         )
                         .addTransition(Slide(Gravity.END)
                             .addTarget(textView9)
                             .addTarget(textView10)
-                            .apply { startDelay = 300 }
+                           // .apply { startDelay = 300 }
                         )
 
-                window.enterTransition = tr.clone()
+                window.enterTransition = tr.clone().apply {
+                        getTransitionAt(1).apply { startDelay = 300 }
+                        getTransitionAt(2).apply { startDelay = 300 }
+                    }
                     .addListener(object : Transition.TransitionListener {
                         override fun onTransitionEnd(transition: Transition) {
                             floatingActionButton?.show()

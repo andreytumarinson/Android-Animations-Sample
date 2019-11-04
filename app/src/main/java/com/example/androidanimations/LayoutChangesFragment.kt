@@ -36,8 +36,13 @@ class LayoutChangesFragment : Fragment() {
         var show2 = false
         button2.setOnClickListener {
             nestText2.visibility = if(show2) View.GONE else View.VISIBLE
-            nestText3.visibility = if(show2) View.GONE else View.VISIBLE
             show2 = !show2
+        }
+
+        var show3 = false
+        button3.setOnClickListener {
+            nestText3.visibility = if(show3) View.GONE else View.VISIBLE
+            show3 = !show3
         }
     }
 

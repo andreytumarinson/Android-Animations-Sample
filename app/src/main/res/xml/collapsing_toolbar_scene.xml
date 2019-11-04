@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@layout/activity_collapsing_toolbar_end"
+        app:constraintSetStart="@layout/activity_collapsing_toolbar_start"
+        app:duration="500">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/recyclerView"
+            app:touchAnchorSide="top" />
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="30"
+                motion:motionTarget="@id/title" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="85"
+                motion:motionTarget="@id/title" />
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="30"
+                motion:motionTarget="@id/subtitle" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="85"
+                motion:motionTarget="@id/subtitle" />
+
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="20"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                motion:motionTarget="@id/toolbar_image" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="60"
+                android:scaleX="0"
+                android:scaleY="0"
+                motion:motionTarget="@id/toolbar_image" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="80"
+                motion:motionTarget="@id/toolbarView" />
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="100"
+                motion:motionTarget="@id/toolbarView" />
+
+
+            <!-- <KeyAttribute
+                 android:alpha="0"
+                 motion:framePosition="80"
+                 motion:motionTarget="@id/toolbarIconContainer" />-->
+
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/backButton" >
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#fff"/>
+            </KeyAttribute>
+
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/backButton" >
+                <CustomAttribute
+                    app:attributeName="colorFilter"
+                    app:customColorValue="#000000"/>
+            </KeyAttribute>
+
+
+
+           <!-- <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="70"
+                motion:motionTarget="@id/backButton2" />
+
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="90"
+                motion:motionTarget="@id/backButton2" />-->
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="80"
+                motion:motionTarget="@id/toolbarTitle" />
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="95"
+                motion:motionTarget="@id/toolbarTitle" />
+
+        </KeyFrameSet>
+
+    </Transition>
+
+
+
+</MotionScene>

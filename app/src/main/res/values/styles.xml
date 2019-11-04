@@ -8,27 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <!-- enable window content transitions -->
-        <!--<item name="android:windowActivityTransitions">true</item>-->
+        <!--<tutorial_item name="android:windowActivityTransitions">true</tutorial_item>-->
 
-        <!--<item name="android:windowContentTransitions">true</item>-->
+        <!--<tutorial_item name="android:windowContentTransitions">true</tutorial_item>-->
 
         <!-- specify enter and exit transitions -->
-        <!--<item name="android:windowEnterTransition">@android:transition/explode</item>
-        <item name="android:windowReturnTransition">@android:transition/slide_right</item>
-        <item name="android:windowExitTransition">@android:transition/explode</item>
-        <item name="android:windowReenterTransition">@android:transition/slide_right</item>-->
+        <!--<tutorial_item name="android:windowEnterTransition">@android:transition/explode</tutorial_item>
+        <tutorial_item name="android:windowReturnTransition">@android:transition/slide_right</tutorial_item>
+        <tutorial_item name="android:windowExitTransition">@android:transition/explode</tutorial_item>
+        <tutorial_item name="android:windowReenterTransition">@android:transition/slide_right</tutorial_item>-->
 
         <!-- specify shared element transitions -->
-        <!--<item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>-->
+        <!--<tutorial_item name="android:windowSharedElementEnterTransition">@android:transition/move</tutorial_item>
+        <tutorial_item name="android:windowSharedElementExitTransition">@android:transition/move</tutorial_item>-->
 
-        <!--<item name="android:windowEnterAnimation">@anim/scale_up</item>
-        <item name="android:windowExitAnimation">@anim/scale_up</item>-->
+        <!--<tutorial_item name="android:windowEnterAnimation">@anim/scale_up</tutorial_item>
+        <tutorial_item name="android:windowExitAnimation">@anim/scale_up</tutorial_item>-->
 
-        <!--<item name="android:windowAnimationStyle">@null</item>-->
-        <!--<item name="android:windowAnimationStyle">@style/ActivityTransitions</item>-->
+        <!--<tutorial_item name="android:windowAnimationStyle">@null</tutorial_item>-->
+        <!--<tutorial_item name="android:windowAnimationStyle">@style/ActivityTransitions</tutorial_item>-->
 
-        <!--<item name="android:windowSharedElementsUseOverlay">false</item>-->
+        <!--<tutorial_item name="android:windowSharedElementsUseOverlay">false</tutorial_item>-->
     </style>
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -41,10 +41,10 @@
         <item name="colorAccent">@color/newAccent</item>
     </style>
     <!--<style name="CircleTheme" parent="Theme.MaterialComponents.Light">
-        <item name="colorAccent">@color/newAccent</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
+        <tutorial_item name="colorAccent">@color/newAccent</tutorial_item>
+        <tutorial_item name="windowActionBar">false</tutorial_item>
+        <tutorial_item name="windowNoTitle">true</tutorial_item>
+        <tutorial_item name="android:windowTranslucentStatus">true</tutorial_item>
     </style>-->
     <style name="RevealTheme" parent="Theme.MaterialComponents.Light">
         <item name="windowActionBar">false</item>

@@ -54,6 +54,10 @@
             android:id="@+id/circle"
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/circle" />
+        <item
+            android:id="@+id/motion"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/motion" />
     </group>
 
     <item android:title="Communicate">

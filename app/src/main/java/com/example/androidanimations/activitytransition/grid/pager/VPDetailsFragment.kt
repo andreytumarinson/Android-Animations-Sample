@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_frag_tr_details.*
 class VPDetailsFragment : Fragment() {
 
     companion object {
-        private const val EXTRA_ITEM = "item"
+        private const val EXTRA_ITEM = "tutorial_item"
         private const val EXTRA_POSITION = "position"
         private const val IS_LOCAL = "is_local"
 

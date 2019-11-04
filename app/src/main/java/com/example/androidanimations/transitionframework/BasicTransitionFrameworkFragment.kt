@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import android.transition.TransitionSet.ORDERING_SEQUENTIAL
 import kotlinx.android.synthetic.main.fragment_transition_framework_1.*
 import com.example.androidanimations.R
 import kotlinx.android.synthetic.main.fragment_physic.*
@@ -20,7 +21,6 @@ class BasicTransitionFrameworkFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_transition_framework_1, container, false)
     }
 

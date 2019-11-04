@@ -31,7 +31,7 @@ class VPGridActivity : AppCompatActivity(), ViewHolderListener {
     private var isLocal = true
     private lateinit var dataList: List<Item>
 
-    private val enterTransitionStarted: AtomicBoolean = AtomicBoolean()
+    //private val enterTransitionStarted: AtomicBoolean = AtomicBoolean()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +39,7 @@ class VPGridActivity : AppCompatActivity(), ViewHolderListener {
 
         PositionHolder.currentItemPosition = 0
 
-        enterTransitionStarted.getAndSet(false)
+        //enterTransitionStarted.getAndSet(false)
 
         isLocal = intent.extras?.getBoolean(IS_LOCAL) ?: true
         dataList = if(isLocal) sampleGridData else sampleRemoteGridData

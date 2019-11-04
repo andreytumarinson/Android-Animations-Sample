@@ -11,8 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".circle.CircleActivity" android:theme="@style/CircleTheme"/>
-        <activity android:name=".circle.RevealActivity" android:theme="@style/RevealTheme"/>
+        <activity android:name=".motion.fragments.MotionFragmentsActivity"/>
+        <activity android:name=".motion.VanGoghActivity" android:theme="@style/AppTheme.NoActionBar.TransparentStatus"/>
+        <activity android:name=".motion.CollapseToolbarActivity" android:theme="@style/AppTheme.NoActionBar.TransparentStatus"/>
+        <activity android:name=".motion.MotionActivity"/>
+        <activity android:name=".motion.MotionPagerActivity"/>
+        <activity android:name=".motion.YouTubeActivity"/>
+        <activity
+            android:name=".motion.MiActivity"
+            android:theme="@style/AppTheme.NoActionBar.TransparentStatus" />
+        <activity
+            android:name=".circle.CircleActivity"
+            android:theme="@style/CircleTheme" />
+        <activity
+            android:name=".circle.RevealActivity"
+            android:theme="@style/RevealTheme" />
         <activity android:name=".activitytransition.grid.pager.ViewPagerActivity" />
         <activity android:name=".activitytransition.grid.pager.VPGridActivity" />
         <activity android:name=".activitytransition.grid.single.DetailActivity" />

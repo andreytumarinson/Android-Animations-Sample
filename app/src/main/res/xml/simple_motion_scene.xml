@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/square">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorAccent" />
+        </Constraint>
+
+        <Constraint android:id="@+id/imageFilter1">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0" />
+        </Constraint>
+
+        <Constraint android:id="@+id/imageFilter2">
+            <Motion motion:pathMotionArc="startHorizontal" />
+            <CustomAttribute
+                motion:attributeName="warmth"
+                motion:customFloatValue="0.5" />
+        </Constraint>
+
+        <Constraint android:id="@+id/imageView">
+            <CustomAttribute
+                motion:attributeName="colorFilter"
+                motion:customColorValue="#7CCC69" />
+        </Constraint>
+
+        <Constraint android:id="@+id/text">
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="#000000" />
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customDimension="4sp" />
+        </Constraint>
+
+        <Constraint android:id="@+id/text2">
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="#000000" />
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/squareEnd"
+        motion:constraintSetStart="@+id/start"
+        motion:motionInterpolator="bounce"
+        motion:duration="1000">
+
+        <OnClick motion:targetId="@id/square" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/squareEnd">
+        <Constraint
+            android:id="@+id/square"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:rotation="90"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorPrimary" />
+        </Constraint>
+
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/imageFilterEnd"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchRegionId="@+id/imageFilter1" />
+
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="parentRelative"
+                motion:motionTarget="@+id/imageFilter1"
+                motion:percentY="0.15" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/imageFilterEnd">
+        <Constraint
+            android:id="@+id/imageFilter1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/square">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/imageFilter2End"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000"
+        motion:staggered="0.3">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:onTouchUp="decelerate"
+            motion:touchRegionId="@+id/imageFilter2" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="1.4"
+                android:scaleY="1.4"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/imageFilter2" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/imageFilter2End">
+        <Constraint
+            android:id="@+id/imageFilter2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="warmth"
+                motion:customFloatValue="2" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/imageEnd"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchRegionId="@+id/imageView" />
+
+        <KeyFrameSet>
+            <KeyCycle
+                android:translationY="0dp"
+                motion:framePosition="30"
+                motion:motionTarget="@+id/imageView"
+                motion:wavePeriod="0"
+                motion:waveShape="sin" />
+
+            <KeyCycle
+                android:translationY="10dp"
+                motion:framePosition="40"
+                motion:motionTarget="@+id/imageView"
+                motion:wavePeriod="2"
+                motion:waveShape="sin" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/imageEnd">
+        <Constraint
+            android:id="@+id/imageView"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/imageFilter2">
+            <CustomAttribute
+                motion:attributeName="colorFilter"
+                motion:customColorValue="#5472F3" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/textEnd"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:onTouchUp="stop"
+            motion:touchRegionId="@+id/text" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/textEnd">
+        <Constraint
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            android:padding="8dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/imageView">
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="#FF3B00" />
+            <CustomAttribute
+                motion:attributeName="textSize"
+                motion:customDimension="8sp" />
+        </Constraint>
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/text2End"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchRegionId="@+id/text" />
+        <OnClick motion:targetId="@+id/text2" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/text2End">
+        <Constraint
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/text">
+            <CustomAttribute
+                motion:attributeName="textColor"
+                motion:customColorValue="#FF3B00" />
+            <Transform
+                android:scaleX="1.4"
+                android:scaleY="1.4" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

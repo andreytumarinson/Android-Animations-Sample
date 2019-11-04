@@ -51,19 +51,11 @@ class FragmentTrans2 : Fragment() {
             Type.TRAN_SHARE_REMOTE-> {
                 val tr = TransitionInflater.from(context).inflateTransition(R.transition.transition_2)
                     .apply { duration = 300 }
-                    .addListener(object : Transition.TransitionListener {
+                    .addListener(object : TransitionListenerAdapter() {
                         override fun onTransitionEnd(transition: Transition) {
                             floatingActionButton?.show()
                             floatingActionButton?.startAnimation(AnimationUtils.loadAnimation(context, R.anim.scale_up))
                         }
-
-                        override fun onTransitionResume(transition: Transition) { }
-
-                        override fun onTransitionPause(transition: Transition) {}
-
-                        override fun onTransitionCancel(transition: Transition) {}
-
-                        override fun onTransitionStart(transition: Transition) {}
                     })
 
                 enterTransition = tr.clone().apply { startDelay = 400 }
@@ -105,7 +97,7 @@ class FragmentTrans2 : Fragment() {
 
             Glide.with(this)
                 .load("https://www.jetsetter.com/uploads/sites/7/2018/04/rp47F1oo-1380x690.jpeg")
-                //.dontTransform()
+                .dontTransform()
                 .transition(
                     DrawableTransitionOptions.withCrossFade(
                         DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build()

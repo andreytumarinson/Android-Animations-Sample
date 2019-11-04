@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@layout/activity_youtube_end"
+        motion:constraintSetStart="@layout/activity_youtube_start"
+        motion:duration="100"
+        motion:motionInterpolator="linear">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:maxAcceleration="100"
+            motion:touchAnchorId="@+id/top_image_container"
+            motion:touchAnchorSide="top"
+            motion:touchRegionId="@+id/top_image_container" />
+
+        <KeyFrameSet>
+
+            <KeyPosition
+                motion:framePosition="20"
+                motion:motionTarget="@id/top_image"
+                motion:percentWidth="0.92"
+                motion:percentX="1" />
+
+            <KeyPosition
+                motion:framePosition="10"
+                motion:motionTarget="@id/title"
+                motion:percentX="2.5" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@id/title"/>
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@id/image_clear" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@id/image_play" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="15"
+                motion:motionTarget="@id/recyclerview_front" />
+
+        </KeyFrameSet>
+    </Transition>
+
+</MotionScene>

@@ -1,12 +1,19 @@
 package com.example.androidanimations.fragmenttransitition.grid.single
 
 
+
+import android.graphics.drawable.Drawable
+import com.bumptech.glide.request.target.Target
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.transition.TransitionInflater
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
 import com.example.androidanimations.R
 import com.example.androidanimations.utils.Item
 import kotlinx.android.synthetic.main.fragment_frag_tr_details.*
@@ -15,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_frag_tr_details.*
 class DetailsFragment : Fragment() {
 
     companion object {
-        private const val EXTRA_ITEM = "item"
+        private const val EXTRA_ITEM = "tutorial_item"
         private const val EXTRA_POSITION = "position"
 
         fun newInstance(item: Item, position: Int): DetailsFragment {
@@ -68,6 +75,6 @@ class DetailsFragment : Fragment() {
     }
 
     private fun prepareSharedTransition() {
-        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(R.transition.image_shared_element_transition)
+        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
     }
 }

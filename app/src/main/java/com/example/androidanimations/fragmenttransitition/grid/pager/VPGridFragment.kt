@@ -50,7 +50,7 @@ class VPGridFragment : Fragment(), ViewHolderListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        enterTransitionStarted.getAndSet(false)
+        //enterTransitionStarted.getAndSet(false)
 
         isLocal = arguments?.getBoolean(IS_LOCAL) ?: true
         dataList = if(isLocal) sampleGridData else sampleRemoteGridData
@@ -100,7 +100,7 @@ class VPGridFragment : Fragment(), ViewHolderListener {
         })
     }
 
-    private val enterTransitionStarted: AtomicBoolean = AtomicBoolean()
+    //private val enterTransitionStarted: AtomicBoolean = AtomicBoolean()
 
     override fun onLoadCompleted(position: Int) {
         // Call startPostponedEnterTransition only when the 'selected' image loading is completed.

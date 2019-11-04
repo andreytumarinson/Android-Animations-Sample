@@ -17,7 +17,7 @@ import com.bumptech.glide.request.target.Target
 class DetailActivity : AppCompatActivity() {
 
     companion object {
-        const val EXTRA_ITEM = "item"
+        const val EXTRA_ITEM = "tutorial_item"
         const val EXTRA_POSITION = "position"
     }
 
@@ -53,7 +53,7 @@ class DetailActivity : AppCompatActivity() {
             .into(imageView)
 
         //todo Local load sample
-        //imageView.setImageResource(item.image as Int)
+        //imageView.setImageResource(tutorial_item.image as Int)
     }
 
     private fun prepareSharedTransition() {
@@ -61,6 +61,6 @@ class DetailActivity : AppCompatActivity() {
         window.enterTransition = TransitionInflater.from(this).inflateTransition(R.transition.fade_without_system)
              .excludeTarget(imageView, true)
 
-        window.sharedElementEnterTransition = TransitionInflater.from(this).inflateTransition(R.transition.image_shared_element_transition)
+        window.sharedElementEnterTransition = TransitionInflater.from(this).inflateTransition(android.R.transition.move)
     }
 }
